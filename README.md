@@ -1,23 +1,27 @@
-# Power-Up "Timer" para Trello
+# Power-Up "Timer & Proofs" para Trello
 
-Play / pausa en cada tarjeta para ver cuánto tiempo te tomó. Sin reportes.
+Versiones de proof (v1, v2, v3…) con su estado, archivo, notas y el tiempo de cada una.
+Arriba se ve el total sumando todas las versiones.
 
-## Instalar
+## Instalar / actualizar
 
-1. Crea un repositorio nuevo en GitHub, por ejemplo `trello-timer`, y sube todo el contenido de esta carpeta.
-2. **Settings → Pages → Branch: main / root → Save**. Tendrás una URL como
-   `https://TU-USUARIO.github.io/trello-timer/`.
-3. En https://trello.com/power-ups/admin crea un **New Power-Up** en el mismo Workspace del tablero.
-4. **Iframe connector URL**: pega la URL del paso 2.
-5. Si pide callback URL de OAuth, pon la misma URL (no se usa).
-6. **Capabilities**: activa `card-buttons`, `card-badges` y `card-detail-badges`.
-7. En el tablero: **Power-Ups → Agregar Power-Ups → Custom → Timer**.
+Si ya tienes el Timer instalado: sube **todo** el contenido de esta carpeta a tu repo
+`trello-timer` (reemplazando lo anterior) y en el admin del Power-Up →
+**Capabilities** activa también **card-back-section**. Recarga Trello.
+
+Si es nuevo: repo en GitHub → Settings → Pages (main / root) → en trello.com/power-ups/admin
+crea el Power-Up con esa URL como **Iframe connector URL** → Capabilities: `card-back-section`,
+`card-buttons`, `card-badges`, `card-detail-badges` → en el tablero, Power-Ups → Custom.
 
 ## Uso
 
-- Arriba de la tarjeta abierta: **Time** (tiempo acumulado, verde con ● mientras corre)
-  y **▶ Start / ⏸ Pause**.
-- Clic en **Time** o en el botón **Timer**: sumar 15 min / 1 hora, restar 15 min, o reiniciar a 0.
-- En el frente de la tarjeta se ve el tiempo total.
-- Cada persona tiene su propio tiempo en cada tarjeta. Sigue contando aunque cierres Trello,
-  hasta que le des Pause.
+- Sección **Proofs & time** dentro de la tarjeta: total, versión actual y botón **Start / Pause**.
+- El timer siempre corre en la **última versión**. Al crear una versión nueva, se pausa la anterior.
+- **Escribir el tiempo a mano:** lápiz de la versión → "Time spent on this version"
+  (1:30, 1h 30m, 90m o 1.5h) o los botones +15m / +30m / +1h.
+- Estados: In progress, Sent to client, Changes requested, Approved.
+- Archivo del proof: link de SharePoint o elegirlo de los adjuntos de la tarjeta.
+- En el frente de la tarjeta: "v3 · Approved" con color y el tiempo total.
+
+Todo es compartido: el equipo ve las mismas versiones y el mismo total.
+Si tenías tiempo en el timer anterior, aparece como **v1** automáticamente.
